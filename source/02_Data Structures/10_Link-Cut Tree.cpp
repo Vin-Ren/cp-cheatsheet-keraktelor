@@ -4,7 +4,7 @@
 // Complexity: log(n)
 
 struct Node { // Splay tree. Root's pp contains tree's parent.
-  Node* p = 0, *pp = 0, *c[2];
+  Node* p = 0, * pp = 0, * c[2];
   int sz = 0;
   //
   Node() {
@@ -22,7 +22,7 @@ struct Node { // Splay tree. Root's pp contains tree's parent.
   }
   void rot(int i, int b) {
     int h = i ^ b;
-    Node* x = c[i], *y = (b == 2 ? x : x->c[h]), *z = (b ? y : x);
+    Node* x = c[i], * y = (b == 2 ? x : x->c[h]), * z = (b ? y : x);
     if(y->p = p) p->c[up()] = y;
     c[i] = z->c[i ^ 1];
     if(b < 2) x->c[h] = y->c[h ^ 1], z->c[h ^ 1] = b ? x : this;
@@ -56,7 +56,7 @@ struct LinkCut {
   }
   void cut(int u, int v) { // remove an edge u --> v
     assert(connected(u, v));
-    Node* x = &node[v], *top = &node[u];
+    Node* x = &node[v], * top = &node[u];
     access(top);
     top->c[0] = top->c[0]->p = 0;
     top->fix();

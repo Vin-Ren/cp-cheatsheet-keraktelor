@@ -5,11 +5,11 @@ struct Point {
   int x, y, id;
 };
 int compareX(const void* a, const void* b) {
-  Point* p1 = (Point*)a, *p2 = (Point*)b;
+  Point* p1 = (Point*)a, * p2 = (Point*)b;
   return (p1->x - p2->x);
 }
 int compareY(const void* a, const void* b) {
-  Point* p1 = (Point*)a, *p2 = (Point*)b;
+  Point* p1 = (Point*)a, * p2 = (Point*)b;
   return (p1->y - p2->y);
 }
 double dist(Point p1, Point p2) {
