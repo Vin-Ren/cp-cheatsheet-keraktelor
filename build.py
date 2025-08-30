@@ -1,5 +1,6 @@
 #!/bin/env python3
 import os
+import sys
 
 SOURCE = './source'
 
@@ -14,6 +15,9 @@ if __name__ == '__main__':
         files = sorted(os.listdir(SOURCE + '/' + section))
         for file in files:
             full_path = path + '/' + file
+            if (file.startswith('_')):
+                print("Skipping %s" % (full_path), file=sys.stderr)
+                continue
             if os.path.isfile(full_path):
                 name, ext = os.path.splitext(file)
                 print("\\subsection{%s}" % get_name(name))
