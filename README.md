@@ -1,6 +1,18 @@
 # AlgoCopypasta
 Copy-pasteable code for programming competitions and ICPC notebook templates.
 
+# Pre-Usage
+If you are on a rather recent version of ubuntu, you should be able to install the required dependencies by simply running install.sh.
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+After which, you should be able to generate the notebook by running:
+```bash
+./generate.sh
+```
+
 # Contributions
 Contributions are welcome. Open a PR and I'll see if I can't merge it into the main branch.
 
