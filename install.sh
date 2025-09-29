@@ -17,6 +17,9 @@ else
     echo "⬇️ Downloading Source Code Pro..."
     curl -L -o scp.zip https://github.com/adobe-fonts/source-code-pro/archive/refs/heads/release.zip
 
+    echo "Installing unzip..."
+    sudo apt-get install -y unzip
+
     # Extract TTFs
     echo "📦 Extracting fonts..."
     unzip -q scp.zip "source-code-pro-release/TTF/*"
