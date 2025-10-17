@@ -1,0 +1,7 @@
+|MCBM| = Maximum Cardinality Bipartite Matching \\
+|Minimum Vertex Cover| = |MCBM| \\ 
+|Maximum Independent Set| = |V| - |MCBM| \\ 
+|Minimum Path Cover| = |V| - |MCBM| \\ 
+In a bipartite graph, a set of vertices S is a vertex cover if and only if its complement V-S is an independent set. \\ 
+In a DAG, a set of vertices P is a path cover if and only if its complement V-P is an independent set. \\ 
+To find the Minimum Vertex Cover from the MCBM, find all vertices not matched on the left side, perform a DFS traversing
