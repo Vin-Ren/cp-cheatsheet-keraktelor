@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "__tree": "cpp",
+        "algorithm": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "complex": "cpp"
+    }
+}
