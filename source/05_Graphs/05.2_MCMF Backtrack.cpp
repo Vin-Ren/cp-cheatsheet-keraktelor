@@ -1,6 +1,6 @@
 // ---[ Min Cost Max Flow (Dijkstra + potentials, with path extraction) ]---
 template<class FlowT = int, class CostT = long long>
-struct MCMF {
+struct MCMF { // In case CE, MCMF<ll,ll> mcmf;
     static constexpr CostT INF = numeric_limits<CostT>::max() / 4;
     static constexpr CostT EPS = (CostT)1e-9;
 
