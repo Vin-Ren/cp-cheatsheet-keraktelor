@@ -6,5 +6,5 @@ template<class T> T rand_int(T mn, T mx) {
 }
 // [mn,mx) NOT TYPO
 template<class T> T rand_float(T mn, T mx) {
-  return uniform_real_distribution<T>(min_val, max_val)(rng);
+  return uniform_real_distribution<T>(mn, mx)(rng);
 }
