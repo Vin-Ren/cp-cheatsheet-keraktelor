@@ -4,6 +4,7 @@
         "algorithm": "cpp",
         "map": "cpp",
         "set": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "limits": "cpp"
     }
 }
