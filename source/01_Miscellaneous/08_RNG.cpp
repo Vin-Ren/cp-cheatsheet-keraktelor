@@ -1,8 +1,10 @@
-// RNG - rand_int(min, max), inclusive
-
 mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
 
-template<class T>
-T rand_int(T mn, T mx) {
+// [mn, mx]
+template<class T> T rand_int(T mn, T mx) {
   return uniform_int_distribution<T>(mn, mx)(rng);
+}
+// [mn,mx) NOT TYPO
+template<class T> T rand_float(T mn, T mx) {
+  return uniform_real_distribution<float>(min_val, max_val)(rng);
 }
