@@ -10,13 +10,14 @@ def get_name(filename):
 if __name__ == '__main__':
     sections = sorted(os.listdir(SOURCE))
     for section in sections:
+        if (section.startswith('_')):
+            continue
         path = SOURCE + '/' + section
         print("\\section{%s}" % get_name(section))
         files = sorted(os.listdir(SOURCE + '/' + section))
         for file in files:
             full_path = path + '/' + file
             if (file.startswith('_')):
-                print("Skipping %s" % (full_path), file=sys.stderr)
                 continue
             if os.path.isfile(full_path):
                 name, ext = os.path.splitext(file)

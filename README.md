@@ -2,19 +2,57 @@
 Copy-pasteable code for programming competitions and ICPC notebook templates.
 
 # Usage
-If you are on a rather recent version of ubuntu, you should be able to install the required dependencies by simply running install.sh.
+
+## Dependencies
+- **xelatex** (e.g. `texlive-xetex` on Debian/Ubuntu, `texlive-xetex` on Arch)
+- **Source Code Pro** font
+- **unzip** (for extracting the font archive)
+
+### Install on Debian/Ubuntu
 ```bash
-chmod +x install.sh
-./install.sh
+sudo apt-get install -y texlive-xetex unzip curl
 ```
 
-After which, you should be able to generate the notebook by running:
+Then install Source Code Pro font:
+```bash
+TMP_DIR=$(mktemp -d)
+curl -L -o "$TMP_DIR/scp.zip" https://github.com/adobe-fonts/source-code-pro/archive/refs/heads/release.zip
+unzip -q "$TMP_DIR/scp.zip" "source-code-pro-release/TTF/*" -d "$TMP_DIR"
+mkdir -p "$HOME/.fonts"
+mv "$TMP_DIR"/source-code-pro-release/TTF/*.ttf "$HOME/.fonts/"
+rm -rf "$TMP_DIR"
+fc-cache -fv "$HOME/.fonts"
+```
+
+### Install on Arch
+```bash
+sudo pacman -S texlive-xetex unzip adobe-source-code-pro-fonts
+```
+
+### Install on Fedora
+```bash
+sudo dnf install texlive-xetex unzip adobe-source-code-pro-fonts
+```
+
+### Install on macOS
+```bash
+brew install texlive unzip
+brew install --cask font-source-code-pro
+```
+
+For other distros, adapt the package names and install steps accordingly. On most distros, the font can alternatively be installed from the package manager (e.g. `adobe-source-code-pro-fonts`) instead of the manual download shown above.
+
+After installing dependencies, generate the notebook by running:
 ```bash
 ./generate.sh
 ```
 
-To modify the source, you can add a new file. 
-To ignore a source, add a prefix `_` to its name, e.g: Renaming `./source/04_Geometry/05_Sutherland-Hodgman Algorithm.cpp` to `./source/04_Geometry/_05_Sutherland-Hodgman Algorithm.cpp` will make the script ignore it.
+To modify the source, you can add a new file.
+
+### Ignoring files
+To ignore a source file, add a prefix `_` to its name, e.g: Renaming `./source/04_Geometry/05_Sutherland-Hodgman Algorithm.cpp` to `./source/04_Geometry/_05_Sutherland-Hodgman Algorithm.cpp` will make the script ignore it.
+
+To ignore an entire section, prefix the directory name with `_`, e.g: `./source/_99_Templates/`.
 
 # Contributions
 Contributions are welcome. Open a PR and I'll see if I can't merge it into the main branch.
