@@ -10,7 +10,7 @@ Copy-pasteable code for programming competitions and ICPC notebook templates.
 
 ### Install on Debian/Ubuntu
 ```bash
-sudo apt-get install -y texlive-xetex unzip curl
+sudo apt install -y texlive-xetex unzip curl
 ```
 
 Then install Source Code Pro font:
@@ -46,6 +46,9 @@ After installing dependencies, generate the notebook by running:
 ```bash
 ./generate.sh
 ```
+Don't forget to chmod +x it.
+
+You can also change the author for e.g. ICPC team notebooks (or you simply just want your own name in there) in `headfoot.tex`.
 
 To modify the source, you can add a new file.
 
@@ -76,8 +79,3 @@ Because of this, the code style used here may be very scuffed while the code qua
 Feel free to use this repo as an example of what NOT to do when writing code.
 
 That being said, most snippets have already been tested for correctness, and I try to make the snippets I put here at least sort-of understandable (as much as I can anyway, there's stuff I just blatantly stole from other people and restyled) with some effort just in case some modification is required to solve whatever it is you have to.
-
-# PDF Generation
-Just run generate.sh. Don't forget to chmod +x it.
-
-You can also change the author for e.g. ICPC team notebooks (or you simply just want your own name in there) in `headfoot.tex`.
